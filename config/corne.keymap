@@ -159,15 +159,15 @@
                 gaming_layer {
                   label = "game";
 // -----------------------------------------------------------------------------------------
-// |    |  TAB  |  Q   |  W   |  E   |  R   |   |  Y  |  U   |  I   |  O   |  P   |     |
+// |    |  TAB  | Q |  W  | E | R |   |  Y  |  U   |  I   |  O   |  P   |     |
 // |    |  ⇧  |  A |  S |  D |  F |   |  H  |  J/⇧ |  K/⌘ |  L/^ | '/⌥  |     |
-// |    |  G  |  Z   |  X |  C |  V   |   |  N  |  M   |  ,   |  ./⌘ |  /   |     |
-//           | SYM ESC | NUM T | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
+// |    |  G  |  Z  |  X |  C |  V  |   |  N  |  M   |  T   |  ./⌘ |  /   |     |
+//           | SYM ESC | NUM TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
    &none  &kp TAB     &kp Q        &kp W       &kp E        &kp R   &kp Y  &kp U        &kp I      &kp O        &kp P          &kp C_VOL_UP
    &none  &kp ⇧       &kp A        &kp S       &kp D        &kp F   &kp H  &hm RSHFT J  &hm RCMD K &hm RCTRL L  &hm RALT SQT   &kp C_VOL_DN
-   &none  &kp G       &kp Z        &kp X       &kp C        &kp V   &kp N  &kp M        &kp COMMA  &hm LCMD DOT &kp FSLH       &none
-                                  &lt SYM ESC  &lt NUM T   &trans   &kp RET &kp BSPC &trans
+   &none  &kp G       &kp Z        &kp X       &kp C        &kp V   &kp N  &kp M        &kp T      &hm LCMD DOT &kp FSLH       &none
+                                  &lt SYM ESC  &lt NUM TAB   &trans   &kp RET &kp BSPC &trans
                         >;
                 };
         };
