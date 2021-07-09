@@ -40,7 +40,7 @@
    &none   &kp Q       &kp W        &kp F       &kp P        &kp B   &kp J  &kp L        &kp U       &kp Y        &kp SQT       &kp C_VOL_UP
    &none   &hm LALT A  &hm LCTRL R  &hm LCMD S  &hm LSHFT T  &kp G   &kp M  &hm RSHFT N  &hm RCMD E  &hm RCTRL I  &hm RALT O    &kp C_VOL_DN
    &none   &kp Z       &hm LCMD X   &hm LSHFT C &kp D        &kp V   &kp K  &kp H        &kp COMMA   &hm LCMD DOT &kp FSLH      &none
-                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
+                        &lt SYM ESC  &lt NUM TAB &lt NAV0 SPACE   &kp RET &kp BSPC &lt CTRL DEL
                         >;
                 };
                 qwerty_layer {
