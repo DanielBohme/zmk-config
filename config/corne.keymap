@@ -5,7 +5,7 @@
 
 #define DEFAULT 0
 #define QWTY 1
-#define CODH 2
+#define GAME 2
 #define NPAD 3
 #define NAV0 4
 #define NUM  5
@@ -30,17 +30,17 @@
         keymap {
                 compatible = "zmk,keymap";
                 default_layer {
-                  label = "base";
+                  label = "codh";
 // -----------------------------------------------------------------------------------------
-// |  TAB |  Q   |  W   |  E   |  R   |  T  |   |  Y  |  U   |  I   |  O   |  P   | BSPC |
-// |  ESC |  A   |  S   |  D   |  F   |  G  |   |  H  |  J   |  K   |  L   |  ;   |  '   |
-// | LSFT |  Z   |  X   |  C   |  V   |  B  |   |  N  |  M   |  ,   |  .   |  /   | RSFT |
-//          | LALT/ESC | LCMD/TAB| NAV0/SPC |   | NROW/RET | RCTL/BSPC | CTRL/DEL |
+// |      |  Q   |  W   |  F   |  P   |  B  |   |  J  |  L   |  U   |  Y   |  '   | VOL UP |
+// |      |  A/⌥ |  R/^ |  S/⌘ |  T/⇧ |  G  |   |  M  |  N/⇧ |  E/⌘ |  I/^ |  O/⌥ | VOL DN |
+// |      |  Z   |  X/⌘ |  C/⇧ |  D   |  V  |   |  K  |  H   |  ,   |  ./⌘ |  /   |        |
+//           | SYM ESC | NUM TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
-   &kp TAB    &kp Q  &kp W  &kp E  &kp R  &kp T   &kp Y  &kp U  &kp I      &kp O    &kp P     &kp BSPC
-   &kp ESC    &kp A  &kp S  &kp D  &kp F  &kp G   &kp H  &kp J  &kp K      &kp L    &kp SEMI  &kp SQT
-   &kp LSHFT  &kp Z  &kp X  &kp C  &kp V  &kp B   &kp N  &kp M  &kp COMMA  &kp DOT  &kp FSLH  &kp RSHFT
-       &mt LALT ESC &mt LCMD TAB &lt NAV0 SPACE   &lt NROW RET &mt RCTRL BSPC &lt CTRL DEL
+   &none   &kp Q       &kp W        &kp F       &kp P        &kp B   &kp J  &kp L        &kp U       &kp Y        &kp SQT       &kp C_VOL_UP
+   &none   &hm LALT A  &hm LCTRL R  &hm LCMD S  &hm LSHFT T  &kp G   &kp M  &hm RSHFT N  &hm RCMD E  &hm RCTRL I  &hm RALT O    &kp C_VOL_DN
+   &none   &kp Z       &hm LCMD X   &hm LSHFT C &kp D        &kp V   &kp K  &kp H        &kp COMMA   &hm LCMD DOT &kp FSLH      &none
+                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
                         >;
                 };
                 qwerty_layer {
@@ -57,18 +57,18 @@
                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
                         >;
                 };
-                colemakdh_layer {
-                  label = "codh";
+                gaming_layer {
+                  label = "game";
 // -----------------------------------------------------------------------------------------
-// |      |  Q   |  W   |  F   |  P   |  B  |   |  J  |  L   |  U   |  Y   |  '   | VOL UP |
-// |      |  A/⌥ |  R/^ |  S/⌘ |  T/⇧ |  G  |   |  M  |  N/⇧ |  E/⌘ |  I/^ |  O/⌥ | VOL DN |
-// |      |  Z   |  X/⌘ |  C/⇧ |  D   |  V  |   |  K  |  H   |  ,   |  ./⌘ |  /   |        |
+// |    |  TAB  | Q |  W  | E | R |   |  Y  |  U   |  I   |  O   |  P   |     |
+// |    |  ⇧  |  A |  S |  D |  F |   |  H  |  J/⇧ |  K/⌘ |  L/^ | '/⌥  |     |
+// |    |  G  |  Z  |  X |  C |  V  |   |  N  |  M   |  T   |  ./⌘ |  /   |     |
 //           | SYM ESC | NUM TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
-   &none   &kp Q       &kp W        &kp F       &kp P        &kp B   &kp J  &kp L        &kp U       &kp Y        &kp SQT       &kp C_VOL_UP
-   &none   &hm LALT A  &hm LCTRL R  &hm LCMD S  &hm LSHFT T  &kp G   &kp M  &hm RSHFT N  &hm RCMD E  &hm RCTRL I  &hm RALT O    &kp C_VOL_DN
-   &none   &kp Z       &hm LCMD X   &hm LSHFT C &kp D        &kp V   &kp K  &kp H        &kp COMMA   &hm LCMD DOT &kp FSLH      &none
-                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
+   &none  &kp TAB     &kp Q        &kp W       &kp E        &kp R   &kp Y  &kp U        &kp I      &kp O        &kp P          &kp C_VOL_UP
+   &none  &kp ⇧       &kp A        &kp S       &kp D        &kp F   &kp H  &hm RSHFT J  &hm RCMD K &hm RCTRL L  &hm RALT SQT   &kp C_VOL_DN
+   &none  &kp G       &kp Z        &kp X       &kp C        &kp V   &kp N  &kp M        &kp T      &hm LCMD DOT &kp FSLH       &none
+                                  &lt SYM ESC  &lt NUM TAB   &trans   &kp RET &kp BSPC &trans
                         >;
                 };
                 npad_layer {
@@ -132,12 +132,12 @@
 // -----------------------------------------------------------------------------------------
 // |      |  !  |  @  |  #  |  $  |  %  |   | {  |  &  |  *  |  +  |  }  |    |
 // |      |  ⌥  |  ^  |  ⌘  |  ⇧  |     |   | :  | $/⇧ |  %  |  ^  |  _  |    |
-// |      |     |  ⌘  |  ⇧  |     |     |   | .  |  !  |  @  |  #  |  \  |    |
+// |      |  ?  |  ⌘  |  ⇧  |     |     |   | .  |  !  |  @  |  #  |  \  |    |
 //       | SYM ESC | NUM TAB | NAV0/SPC |   | (  |  )  | ~ |
                         bindings = <
-   &none  &kp EXCL  &kp AT     &kp HASH  &kp DLLR  &kp PRCNT   &kp LBRC    &kp AMPS        &kp ASTRK  &kp PLUS  &kp RBRC   &none
-   &none  &kp LALT  &kp LCTRL  &kp LCMD  &kp LSHFT &none       &kp COLON   &hm RSHFT DLLR  &kp PRCNT  &kp CARET &kp UNDER  &none
-   &none  &none     &kp LCMD   &kp LSHFT &none     &none       &kp DOT     &kp EXCL        &kp AT     &kp HASH  &kp BSLH   &none
+   &none  &kp EXCL   &kp AT     &kp HASH  &kp DLLR  &kp PRCNT   &kp LBRC    &kp AMPS        &kp ASTRK  &kp PLUS  &kp RBRC   &none
+   &none  &kp LALT   &kp LCTRL  &kp LCMD  &kp LSHFT &none       &kp COLON   &hm RSHFT DLLR  &kp PRCNT  &kp CARET &kp UNDER  &none
+   &none  &kp QMARK  &kp LCMD   &kp LSHFT &none     &none       &kp DOT     &kp EXCL        &kp AT     &kp HASH  &kp BSLH   &none
                                        &trans &trans &trans    &kp LPAR    &kp RPAR &kp TILDE
                         >;
                 }; 
@@ -146,7 +146,7 @@
 // -----------------------------------------------------------------------------------------
 // |    | F12 | F7 | F8 | F9 |    |   | bt 0    | bt 1    | bt 2    | bt 3 | btclr |   |
 // |    | F11 | F4 | F5 | F6 |    |   | RGB_TOG |  ⇧      |  ⌘      |  ^   |   ⌥   |   |
-// |    | F10 | F1 | F2 | F3 |    |   | TG QWTY | TG CODH | TG NPAD |       |       |   |
+// |    | F10 | F1 | F2 | F3 |    |   | TG QWTY | TG CODH | TG NPAD | TG GAME |       |   |
 //              | ESC | TAB | SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
    &none &kp F12 &kp F7 &kp F8 &kp F9 &kp C_VOL_UP     &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR &none
