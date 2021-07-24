@@ -5,7 +5,7 @@
 
 #define DEFAULT 0
 #define QWTY 1
-#define WMAN 2
+#define GAME 2
 #define NPAD 3
 #define NAV0 4
 #define NUM  5
@@ -57,18 +57,18 @@
                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
                         >;
                 };
-                workman_layer {
-                  label = "wman";
+                gaming_layer {
+                  label = "game";
 // -----------------------------------------------------------------------------------------
-// |      |  Q   |  D   |  R   |  W   |  B  |   |  J  |  F   |  U   |  P   |  '   | VOL UP |
-// |      |  A/⌥ |  S/^ |  H/⌘ |  T/⇧ |  G  |   |  Y  |  N/⇧ |  E/⌘ |  O/^ |  I/⌥ | VOL DN |
-// |      |  Z   |  X/⌘ |  M/⇧ |  C   |  V  |   |  K  |  L   |  ,   |  ./⌘ |  /   |        |
-//           | SYM ESC | NUM TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
+// |    |  T  | Q |  X  | E | R |   |  Y  |  U   |  I   |  O   |  P   |     |
+// |    |  ⇧  |  A |  W |  D |  F |   |  H  |  J/⇧ |  K/⌘ |  L/^ | '/⌥  |     |
+// |    |  G/^  |  Z  |  S |  C |  V  |   |  N  |  M   |  T   |  ./⌘ |  /   |     |
+//           | SYM ESC | TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
-   &none   &kp Q       &kp D        &kp R       &kp W        &kp B   &kp J  &kp F        &kp U       &kp P        &kp SQT       &kp C_VOL_UP
-   &none   &hm LALT A  &hm LCTRL S  &hm LCMD H  &hm LSHFT T  &kp G   &kp Y  &hm RSHFT N  &hm RCMD E  &hm RCTRL O  &hm RALT I    &kp C_VOL_DN
-   &none   &kp Z       &hm LCMD X   &hm LSHFT M &kp C        &kp V   &kp K  &kp L        &kp COMMA   &hm LCMD DOT &kp FSLH      &none
-                                   &lt SYM ESC  &lt NUM TAB &trans   &kp RET &kp BSPC &trans
+   &none  &kp T       &kp Q        &kp X       &kp E        &kp R   &kp Y  &kp U        &kp I      &kp O        &kp P          &kp C_VOL_UP
+   &none  &kp LSHFT   &kp A        &kp W       &kp D        &kp F   &kp H  &hm RSHFT J  &hm RCMD K &hm RCTRL L  &hm RALT SQT   &kp C_VOL_DN
+   &none  &hm G LCTRL &kp Z        &kp S       &kp C        &kp V   &kp N  &kp M        &kp T      &hm LCMD DOT &kp FSLH       &none
+                                  &lt SYM ESC  &kp TAB   &trans   &kp RET &kp BSPC &trans
                         >;
                 };
                 npad_layer {
@@ -88,8 +88,8 @@
                 nav0_layer {
                   label = "nav";
 // -----------------------------------------------------------------------------------------
-// |      | 8    | 9    | 4    |  3     | 2      |   |      |  '   | HOME | PGUP  |     |      |
-// |      | 7/⌥  | 6/^  | 5/⌘  |  0/⇧   | 1      |   | LEFT | DOWN | UP   | Right |  -  |      |
+// |      | 5    | 6    | 7    |  8     | 9      |   |      |  '   | HOME | PGUP  |     |      |
+// |      | 0/⌥  | 1/^  | 2/⌘  |  3/⇧   | 4      |   | LEFT | DOWN | UP   | Right |  -  |      |
 // |      |      | ⌘    |   ⇧  | VOL DN | VOL UP |   |      |      | END  | PGDN  | "|" |      |
 //             | SYM ESC | NUM TAB | NAV0/SPC |   | RET | BSPC | DEL |
                         bindings = <
@@ -146,12 +146,12 @@
 // -----------------------------------------------------------------------------------------
 // |    | F12 | F7 | F8 | F9 |    |   | bt 0    | bt 1    | bt 2    | bt 3 | btclr |   |
 // |    | F11 | F4 | F5 | F6 |    |   | RGB_TOG |  ⇧      |  ⌘      |  ^   |   ⌥   |   |
-// |    | F10 | F1 | F2 | F3 |    |   | TG QWTY | TG WMAN | TG NPAD |      |       |   |
+// |    | F10 | F1 | F2 | F3 |    |   | TG QWTY | TG GAME | TG NPAD |      |       |   |
 //              | ESC | TAB | SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
    &none &kp F12 &kp F7 &kp F8 &kp F9 &kp C_VOL_UP     &bt BT_SEL 0    &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_CLR &none
    &none &kp F11 &kp F4 &kp F5 &kp F6 &kp C_VOL_DN     &rgb_ug RGB_TOG &kp LSHFT    &kp LCMD     &kp LCTRL    &kp LALT   &none
-   &none &kp F10 &kp F1 &kp F2 &kp F3 &none            &tog QWTY       &tog WMAN    &tog NPAD    &none        &none      &none
+   &none &kp F10 &kp F1 &kp F2 &kp F3 &none            &tog QWTY       &tog GAME    &tog NPAD    &none        &none      &none
                          &kp ESC &kp TAB &kp SPACE     &trans &trans &trans
                         >;
                 };
