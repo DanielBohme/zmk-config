@@ -63,12 +63,12 @@
 // |    |  T  | Q |  X  | E | R |   |  Y  |  U   |  I   |  O   |  P   |     |
 // |    |  ⇧  |  A |  W |  D |  F |   |  H  |  J/⇧ |  K/⌘ |  L/^ | '/⌥  |     |
 // |    |  G/^  |  Z  |  S |  C |  V  |   |  N  |  M   |  T   |  ./⌘ |  /   |     |
-//           | SYM ESC | TAB | NAV0/SPC |   | RET | BSPC | CTRL/DEL |
+//           | NAV0/ESC | TAB | SPC |   | RET | BSPC | CTRL/DEL |
                         bindings = <
    &none  &kp T       &kp Q        &kp X       &kp E        &kp R   &kp Y  &kp U        &kp I      &kp O        &kp P          &kp C_VOL_UP
    &none  &kp LSHFT   &kp A        &kp W       &kp D        &kp F   &kp H  &hm RSHFT J  &hm RCMD K &hm RCTRL L  &hm RALT SQT   &kp C_VOL_DN
    &none  &hm G LCTRL &kp Z        &kp S       &kp C        &kp V   &kp N  &kp M        &kp T      &hm LCMD DOT &kp FSLH       &none
-                                  &lt SYM ESC  &kp TAB   &trans   &kp RET &kp BSPC &trans
+                                  &lt NAV0 ESC  &kp TAB   &kp SPACE   &kp RET &kp BSPC &trans
                         >;
                 };
                 npad_layer {
